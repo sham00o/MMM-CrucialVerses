@@ -1,0 +1,23 @@
+{
+  "name": "mmm-crucialverses",
+  "version": "1.0.0",
+  "description": "Magic mirror module which displays a crucial Bible verse",
+  "main": "MMM-CrucialVerses.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sham00o/MMM-CrucialVerses.git"
+  },
+  "author": "Samuel Liu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sham00o/MMM-CrucialVerses/issues"
+  },
+  "homepage": "https://github.com/sham00o/MMM-CrucialVerses#readme",
+  "dependencies": {
+    "jssoup": "^0.0.12",
+    "request": "^2.83.0"
+  }
+}

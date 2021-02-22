@@ -1,0 +1,9 @@
+.MMM-CrucialVerses {
+    max-width: 100vh;
+    height: auto;
+    max-height: 100vh;
+}
+
+.MMM-CrucialVerses .body {
+    margin-top: 10px
+}
