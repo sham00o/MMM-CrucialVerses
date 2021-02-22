@@ -3,10 +3,8 @@ Module.register("MMM-CrucialVerses", {
     // Default module config.
     result: [],
     defaults: {
-        title: 'Beseeching.org',
-        size: 'bright small',
+        size: 'medium',
         alignment: null,
-        showDetails: false
     },
 
     start: function() {
@@ -38,43 +36,28 @@ Module.register("MMM-CrucialVerses", {
     getDom: function() {
         Log.log("Updating MMM-CrucialVerses DOM.");
 
-        var prayer = "";
-        var description = "";
-        var day = ""
+        var reference = "";
+        var text = "";
 
-        if(this.prayerOfTheDay != null && this.prayerDescription != null && this.prayerDay != null) {
-            prayer = this.prayerOfTheDay;
-            description = this.prayerDescription;
-            day = this.prayerDay;
+        if (this.ref != null && this.text != null) {
+            reference = this.ref;
+            text = this.text;
         }
 
-	var size = this.config.size
+	      var size = this.config.size
         var alignment = this.config.alignment ? ' '+this.config.alignment : ''
 
         var wrapper = document.createElement("div");
 
-        const origin = document.createElement("div");
-        origin.className = 'dimmed xsmall' + alignment;
-        origin.innerHTML = this.config.title;
-        wrapper.appendChild(origin);
-
         const title  = document.createElement("div");
-	      title.innerHTML = prayer;
-        title.className = 'bright medium' + alignment;
+	      title.innerHTML = reference;
+        title.className = 'small' + alignment;
         wrapper.appendChild(title)
 
-        if (this.config.showDetails) {
-          const date  = document.createElement("div");
-          date.innerHTML = day;
-          date.className = 'xsmall' + alignment;
-          wrapper.appendChild(date)
-
-          const body  = document.createElement("div");
-          var size = !this.config.size ? "medium" : this.config.size
-          body.className = 'body ' + size + alignment
-          body.innerHTML = description;
-          wrapper.appendChild(body)
-        }
+        const body  = document.createElement("div");
+        body.className = 'body bright ' + size + alignment
+        body.innerHTML = text;
+        wrapper.appendChild(body)
 
         return wrapper;
       },
@@ -83,9 +66,8 @@ Module.register("MMM-CrucialVerses", {
         Log.log("socket received from Node Helper");
         if(notification == "VERSE_RESULT"){
             Log.log(payload);
-            this.prayerOfTheDay = payload.title;
-            this.prayerDay = payload.date;
-            this.prayerDescription = payload.body;
+            this.ref = payload.ref;
+            this.text = payload.text;
 
             this.updateDom();
         }
