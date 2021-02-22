@@ -1,5 +1,5 @@
 # MMM-CrucialVerses
-This an extension for the [MagicMirror](https://github.com/MichMich/MagicMirror). It will a display a crucial Bible verse.
+This an extension for the [MagicMirror](https://github.com/MichMich/MagicMirror). It will a display one of several crucial Bible verses.
 
 ## Installation
 1. Navigate into your MagicMirror's `modules` folder
@@ -44,9 +44,8 @@ The following properties can be configured:
 </table>
 
 ## Dependencies
-- Access to the internet to download verse of the day from www.biblegateway.com.
+- Access to the internet to download verse of the day from www.api.lsm.org
 - npm package `request`
-- npm package `jssoup`
 
 The MIT License (MIT)
 =====================
