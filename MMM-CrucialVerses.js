@@ -19,7 +19,7 @@ Module.register("MMM-CrucialVerses", {
         //Then every hour
         setInterval(function() {
                 self.sendSocketNotification('START', configuredVersion);
-        }, 3600000); //perform every hour (3600000 milliseconds)
+        }, 180000); // perform every 3 minutes
     },
 
     getStyles: function () {

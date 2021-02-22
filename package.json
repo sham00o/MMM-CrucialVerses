@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/sham00o/MMM-CrucialVerses#readme",
   "dependencies": {
-    "jssoup": "^0.0.12",
     "request": "^2.83.0"
   }
 }

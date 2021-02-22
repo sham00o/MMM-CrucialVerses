@@ -7,7 +7,6 @@
 
 var NodeHelper = require("node_helper");
 var request = require('request');
-var JSSoup = require('jssoup').default;
 var verses = require('./verses.js').verses;
 
 
@@ -36,7 +35,6 @@ module.exports = NodeHelper.create({
 					ref: verse.ref,
 					text: verse.text
 				}
-				console.log(result)
 				self.sendSocketNotification('VERSE_RESULT', result);
 			}
 		});
