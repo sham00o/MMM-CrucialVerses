@@ -14,11 +14,11 @@ Module.register("MMM-CrucialVerses", {
         var configuredVersion = this.config.version;
 
         //Do this once first
-        self.sendSocketNotification('START', configuredVersion);
+        self.sendSocketNotification('GET_VERSE', configuredVersion);
 
         //Then every hour
         setInterval(function() {
-                self.sendSocketNotification('START', configuredVersion);
+                self.sendSocketNotification('GET_VERSE', configuredVersion);
         }, 180000); // perform every 3 minutes
     },
 
